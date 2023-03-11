@@ -1,0 +1,361 @@
+@import '../variables.scss';
+
+guide-button[disabled] {
+  pointer-events: none;
+}
+
+.gd-button {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 5px;
+  border: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+
+  &.no-icon {
+    justify-content: center;
+  }
+
+  &.with-icon {
+    justify-content: space-between;
+  }
+
+  &.sm {
+    height: 32px;
+  }
+
+  &.md {
+    height: 40px;
+  }
+
+  &.lg {
+    height: 48px;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: #999999 !important;
+    background-color: #ebebeb !important;
+    border: none !important;
+    cursor: unset !important;
+  }
+}
+
+.gd-button-primary {
+  @extend .gd-button;
+
+  &__primary {
+    color: map-get(map-get($gd-primary, contrast), main);
+    background: map-get($gd-primary, main);
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-primary, 400)
+        radial-gradient(circle, transparent 1%, map-get($gd-primary, 400) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-primary, 100);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__error {
+    color: map-get(map-get($gd-error, contrast), 400);
+    background: map-get($gd-error, main);
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-error, 400)
+        radial-gradient(circle, transparent 1%, map-get($gd-error, 400) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-error, 100);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__warning {
+    color: map-get(map-get($gd-warning, contrast), main);
+    background: map-get($gd-warning, main);
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-warning, 400)
+        radial-gradient(circle, transparent 1%, map-get($gd-warning, 400) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-warning, 100);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__success {
+    color: map-get(map-get($gd-success, contrast), main);
+    background: map-get($gd-success, main);
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-success, 400)
+        radial-gradient(circle, transparent 1%, map-get($gd-success, 400) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-success, 100);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+.gd-button-secondary {
+  @extend .gd-button;
+
+  &__primary {
+    border: 2px solid #d6d6d6;
+    background-color: #ffffff;
+    color: map-get($gd-primary, main);
+    box-sizing: border-box;
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-primary, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-primary, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-primary, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__error {
+    border: 2px solid map-get($gd-error, main);
+    background-color: #ffffff;
+    color: map-get($gd-error, main);
+    box-sizing: border-box;
+
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-error, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-error, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-error, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__warning {
+    border: 2px solid map-get($gd-warning, main);
+    background-color: #ffffff;
+    color: map-get($gd-warning, main);
+    box-sizing: border-box;
+
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-warning, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-warning, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-warning, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__success {
+    border: 2px solid map-get($gd-success, main) !important;
+    background-color: #ffffff;
+    color: map-get($gd-success, main);
+    box-sizing: border-box;
+
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-success, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-success, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-success, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+.gd-button-tertiary {
+  @extend .gd-button;
+
+  &__primary {
+    background-color: inherit;
+    color: map-get($gd-primary, 500);
+    box-sizing: border-box;
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-primary, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-primary, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-primary, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__error {
+    background-color: inherit;
+    color: map-get($gd-error, 500);
+    box-sizing: border-box;
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-error, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-error, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-error, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__warning {
+    background-color: inherit;
+    color: map-get($gd-warning, 500);
+    box-sizing: border-box;
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-warning, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-warning, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-warning, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__success {
+    background-color: inherit;
+    color: map-get($gd-success, 500);
+    box-sizing: border-box;
+    background-position: center;
+
+    &:hover:not(:disabled) {
+      background-position: center;
+      transition: background 0.8s;
+      background: map-get($gd-success, 100)
+        radial-gradient(circle, transparent 1%, map-get($gd-success, 100) 1%) center/15000%;
+    }
+
+    &:active:not(:disabled) {
+      background-color: map-get($gd-success, 400);
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+}
+
+.gd-button-none {
+  @extend .gd-button;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4b4a53;
+  background: #ebebeb;
+
+  &:hover:not(:disabled) {
+    color: #4b4a53;
+    background-position: center;
+    transition: background 0.8s;
+    background: #f3f3f3 radial-gradient(circle, transparent 1%, #f3f3f3 1%) center/15000%;
+  }
+
+  &:active:not(:disabled) {
+    color: #4b4a53;
+    background-color: #f3f3f3;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+.gd-button-border {
+  @extend .gd-button;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4b4a53;
+  background: inherit;
+  border: 1px solid #4b4a53;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  &:hover:not(:disabled) {
+    color: #4b4a53;
+    background-position: center;
+    transition: background 0.8s;
+    background: #f3f3f3 radial-gradient(circle, transparent 1%, #f3f3f3 1%) center/15000%;
+  }
+
+  &:active:not(:disabled) {
+    color: #4b4a53;
+    background-color: #f3f3f3;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}

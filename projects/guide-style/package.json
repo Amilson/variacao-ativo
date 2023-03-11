@@ -1,0 +1,13 @@
+{
+  "name": "guide-style",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/forms": "^13.1.1",
+    "rxjs": "~7.5.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

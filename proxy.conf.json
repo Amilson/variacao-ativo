@@ -1,7 +1,7 @@
 {
   "/api": {
     "target": "https://query2.finance.yahoo.com",
-    "secure": false,
+    "secure": true,
     "pathRewrite": {
       "^/api": ""
     },

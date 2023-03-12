@@ -1,1 +1,5 @@
 <guide-button type="primary" color="primary"> teste </guide-button>
+
+<ng-container *ngIf="__data$ | async as data">
+  <app-main-chart [model]="data"></app-main-chart>
+</ng-container>

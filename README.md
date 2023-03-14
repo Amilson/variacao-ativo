@@ -8,6 +8,23 @@ Acesso: https://d1qhvfw9hn8ehr.cloudfront.net
 
 <br/>
 
+## Telas
+
+O projeto consiste em 3 telas principais.
+
+- A tela responsável por listar alguns ativos que pré selecionei para poder consultar. Nesse caso poderiamos incluir uma api para retornar os ativos (eu não consegui extrair essa api do yahoo, e tbm não encontrei a dog das apis do yahoo, pelo que vi, eles não tem uma doc).
+- A tela responsável por exibir os detalhes de determinado ativo, consultar ana api do yahoo perante os parametros selecionados e exibir um gráfico.
+
+### Tela de listagem de ativos
+![image](https://user-images.githubusercontent.com/10110065/225113384-bb13e086-7fd1-4b74-921b-742bcea547d0.png)
+
+### Tela de detalhes do ativo
+![image](https://user-images.githubusercontent.com/10110065/225113311-08e2ee96-3b1d-4963-8a42-5eae7a8e6fdf.png)
+
+### Tela de componentes guide
+![image](https://user-images.githubusercontent.com/10110065/225113523-ea6d291f-c9d2-4cb2-8fdb-2b96743c67e4.png)
+
+
 ## Guide Style
 
 Para desenvolvimento do style, criei uma library contendo alguns componentes, e inicialmente idealizei o layout dos botões da plataforma inteira.

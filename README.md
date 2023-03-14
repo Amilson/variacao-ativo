@@ -100,3 +100,18 @@ O código da api esta na pasta `api/lambda`
 - Então criei uma lambda na aws
 - Publiquei uma api gateway para consumir essa lambda
 - Api: `https://qkcb0vctrf.execute-api.us-east-1.amazonaws.com/variacao-ativo?symbol=PETR4.SA&period1=1671036335&period2=1678812335&useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn`
+
+
+### Criando a lambda:
+![image](https://user-images.githubusercontent.com/10110065/225114000-4146e6d5-5da4-4835-b3dc-1ed6c3f5aa6c.png)
+
+### Criando a api gateway:
+![image](https://user-images.githubusercontent.com/10110065/225113888-46685e41-3b00-4f46-bfdf-aec12e77adbe.png)
+
+### S3 com os arquivos do build:
+![image](https://user-images.githubusercontent.com/10110065/225114127-06f1703b-9ead-47ac-a616-a2298eb4ea17.png)
+
+### CloudFron apontando para o s3
+![image](https://user-images.githubusercontent.com/10110065/225114231-5eb81ec9-ffa2-4d2d-a57a-aa3536675400.png)
+
+

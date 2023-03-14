@@ -1,1 +1,3 @@
-export * from './main.module';
+export * from './components';
+export * from './list';
+export * from './variation';

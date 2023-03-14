@@ -1,0 +1,13 @@
+@import 'dist/guide-style/assets/scss/partials/variables';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: map-get($gd-primary, 'main');
+  padding: 8px;
+
+  img {
+    cursor: pointer;
+  }
+}

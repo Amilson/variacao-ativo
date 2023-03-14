@@ -1,1 +1,2 @@
-export * as main from './main.actions';
+export * as list from './list.actions';
+export * as variation from './variation.actions';

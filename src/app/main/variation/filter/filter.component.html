@@ -1,0 +1,23 @@
+<ng-container *ngIf="_form">
+  <mat-form-field appearance="fill">
+    <mat-label>Período</mat-label>
+    <mat-date-range-input [rangePicker]="picker" [formGroup]="_form">
+      <input matStartDate formControlName="startDate" (dateChange)="onChangeData('start')" />
+      <input matEndDate formControlName="endDate" (dateChange)="onChangeData('end')" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker disabled="false"></mat-date-range-picker>
+  </mat-form-field>
+
+  <div class="group-range">
+    <guide-button
+      *ngFor="let group of _groups"
+      [type]="_form.controls['group'].value === group ? 'primary' : 'secondary'"
+      (click)="onChangeGroup(group)"
+    >
+      {{ group }}
+    </guide-button>
+  </div>
+
+  <guide-button type="primary" color="success" (click)="onSubmit()"> Aplicar </guide-button>
+</ng-container>

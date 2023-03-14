@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 12px;
+  padding: 24px;
+  gap: 12px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+  }
+
+  .symbol {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0f69ff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .title {
+    align-items: center;
+    color: #4b4a53;
+    display: flex;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    text-align: justify;
+  }
+
+  .description {
+    align-items: center;
+    color: #9c9ca6;
+    display: flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    text-align: justify;
+  }
+}

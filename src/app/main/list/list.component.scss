@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .body {
+    padding: 24px;
+    margin: auto;
+
+    .box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+  }
+}

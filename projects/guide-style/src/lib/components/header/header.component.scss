@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(230, 230, 230);
+
+  .breadcrumb {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title {
+      align-items: center;
+      color: #4b4a53;
+      display: flex;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: justify;
+    }
+
+    .sub-title {
+      align-items: center;
+      color: #4b4a53;
+      display: flex;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: justify;
+    }
+
+    .description {
+      align-items: center;
+      color: #9c9ca6;
+      display: flex;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 16px;
+      text-align: justify;
+    }
+  }
+}

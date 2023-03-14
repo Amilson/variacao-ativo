@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .body {
+    padding: 24px;
+    margin: auto;
+
+    .title {
+      align-items: center;
+      color: #4b4a53;
+      display: flex;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: justify;
+      margin: 12px 0px;
+    }
+
+    .group {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+  }
+}

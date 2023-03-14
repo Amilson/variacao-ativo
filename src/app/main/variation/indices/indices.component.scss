@@ -1,0 +1,10 @@
+:host {
+  overflow: auto;
+
+  .body {
+    display: flex;
+    gap: 12px;
+    min-width: 1500px;
+    padding: 24px 0px;
+  }
+}

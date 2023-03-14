@@ -1,1 +1,2 @@
-export * as fromMain from './main.reducer';
+export * as fromList from './list.reducer';
+export * as fromVariation from './variation.reducer';

@@ -1,1 +1,2 @@
-export * as main from './main.selector';
+export * as list from './list.selector';
+export * as variation from './variation.selector';

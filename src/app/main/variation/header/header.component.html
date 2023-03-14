@@ -1,0 +1,8 @@
+<ng-container *ngIf="__data$ | async as data">
+  <guide-header
+    [title]="data?.id"
+    [subTitle]="data?.title"
+    [description]="data?.description"
+    [linkToGoBack]="'/'"
+  ></guide-header>
+</ng-container>

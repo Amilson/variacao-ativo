@@ -1,0 +1,19 @@
+<app-variation-header></app-variation-header>
+
+<ng-container *ngIf="__control$ | async as control">
+  <guide-loading *ngIf="control.isLoading"></guide-loading>
+</ng-container>
+
+<ng-container *ngIf="__search$ | async as search">
+  <app-variation-filter
+    (onSearch)="onHandleSearch($event)"
+    [search]="search"
+  ></app-variation-filter>
+</ng-container>
+
+<section class="body">
+  <ng-container *ngIf="__data$ | async as data">
+    <app-variation-chart [model]="data"></app-variation-chart>
+  </ng-container>
+  <app-indices></app-indices>
+</section>

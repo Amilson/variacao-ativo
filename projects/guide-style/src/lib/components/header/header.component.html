@@ -1,0 +1,10 @@
+<div class="action" *ngIf="linkToGoBack">
+  <guide-button type="tertiary" color="success" [routerLink]="[linkToGoBack]"
+    >&larr; Voltar
+  </guide-button>
+</div>
+<div class="breadcrumb">
+  <span class="title" *ngIf="title"> {{ title }} </span>
+  <span class="sub-title" *ngIf="subTitle"> {{ subTitle }} </span>
+  <span class="description" *ngIf="description"> {{ description }} </span>
+</div>

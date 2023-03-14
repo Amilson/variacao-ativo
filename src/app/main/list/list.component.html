@@ -1,0 +1,16 @@
+<guide-header
+  title="Lista de ativos"
+  description="Escolha um ativo e visualize o gráfico por períodos"
+></guide-header>
+
+<ng-container *ngIf="__control$ | async as control">
+  <guide-loading *ngIf="control.isLoading"></guide-loading>
+</ng-container>
+
+<ng-container *ngIf="__data$ | async as data">
+  <div class="body">
+    <div class="box">
+      <app-list-data *ngFor="let item of data" [model]="item"></app-list-data>
+    </div>
+  </div>
+</ng-container>

@@ -1,27 +1,85 @@
-# VariacaoAtivo
+# Variação Ativo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+## Online
 
-## Development server
+Apenas publiquei no cloudfront sem a criação de um domínimo.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Acesso: https://d1qhvfw9hn8ehr.cloudfront.net
 
-## Code scaffolding
+<br/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Guide Style
 
-## Build
+Para desenvolvimento do style, criei uma library contendo alguns componentes, e inicialmente idealizei o layout dos botões da plataforma inteira.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Esta library carrega um json com cores no formato hexadecimal localizado em `assets/guide-style-settings.json`.
 
-## Running unit tests
+Este JSON também contém a configuração de font-family. A library inteira se modela á configuração desse JSON.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O que possibilita a criação de white-labels diferenciados, caso a guide tenha clientes que queiram contratar a plataforma e queiram utilizar seu proprio styleguide (cores, imagens, etc)
 
-## Running end-to-end tests
+<br/>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+O projeto contém:
 
-## Further help
+- Buttons
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Com opção de tipo primary, border, e cores success, white, question.
+
+```
+<guide-button type="primary">
+  Primary
+</guide-button>
+```
+
+---
+
+### Como utilizar a library:
+
+Após customizar ou criar algum componente novo, rodar o comando:
+
+```
+ng build guide-style
+```
+
+Será disponibilizado o build na pasta /dist.
+Nesse caso poderia ser publicado tambem no npm, onde tambem já fiz em diversos projetos.
+
+---
+
+## Store
+
+Utilizei o ngrx-store para armazenamento de estado
+
+## Deploy
+
+Estou utilizando ambiente da aws
+
+Então criei o seguinte:
+
+- Criei 1 bucket no s3 chamado: variacao-ativo
+- Criei 1 cloudfront para consumir o conteudo do bucket s3 variacao-ativo
+
+O deploy consiste em:
+
+- rodar o comando `ng build`
+- e na sequência os seguintes comandos:
+
+```
+aws s3 rm s3://variacao-ativo --recursive
+cd dist/variacao-ativo
+aws s3 cp . s3://variacao-ativo --recursive
+aws cloudfront create-invalidation --distribution-id E28ZXE9B75RCZF --paths "/*"
+```
+
+## Plus + Api
+
+Para conseguir utilizar a api do yahoo, existe um block por cors ao rodar num domínio diferente do yahoo.
+
+Então desenvolvi uma api servless bem simples, apenas fazendo chamadas na api do yahoo repassando os parametros que eu preciso.
+
+O código da api esta na pasta `api/lambda`
+
+- Então criei uma lambda na aws
+- Publiquei uma api gateway para consumir essa lambda
+- Api: `https://qkcb0vctrf.execute-api.us-east-1.amazonaws.com/variacao-ativo?symbol=PETR4.SA&period1=1671036335&period2=1678812335&useYfid=true&interval=1d&includePrePost=true&events=div%7Csplit%7Cearn`
